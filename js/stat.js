@@ -41,6 +41,7 @@ window.renderStatistics = function(ctx, names, times) {
   for (var i = 0; i < names.length; i++) {
     ctx.fillStyle = '#000';
     ctx.fillText(names[i], CLOUD_X + GAP_X + BAR_WIDTH*i + GAP_X*i, CLOUD_HEIGHT - GAP);
+    ctx.fillText(Math.round(times[i]), CLOUD_X + GAP_X + BAR_WIDTH*i + GAP_X*i, CLOUD_HEIGHT - GAP + (-(barHeight*times[i]) / maxTime));
     ctx.fillStyle = (i === 0) ? 'rgba(255, 0, 0, 1)' : 'rgba(2, 14, 134, 1)';
     if (i === 1) {
       ctx.fillStyle = 'rgba(2, 14, 134, 1)';
