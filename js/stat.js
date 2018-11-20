@@ -41,37 +41,14 @@ window.renderStatistics = function(ctx, names, times) {
   for (var i = 0; i < names.length; i++) {
     ctx.fillStyle = '#000';
     ctx.fillText(names[i], CLOUD_X + GAP_X + BAR_WIDTH*i + GAP_X*i, CLOUD_HEIGHT - GAP);
-    ctx.fillText(Math.round(times[i]), CLOUD_X + GAP_X + BAR_WIDTH*i + GAP_X*i, CLOUD_HEIGHT - GAP + (-(barHeight*times[i]) / maxTime));
+    ctx.fillText(Math.round(times[i]), CLOUD_X + GAP_X + BAR_WIDTH*i + GAP_X*i, CLOUD_HEIGHT - GAP + (-(barHeight*times[i]) / maxTime) - GAP_Y);
     ctx.fillStyle = (i === 0) ? 'rgba(255, 0, 0, 1)' : 'rgba(2, 14, 134, 1)';
-    if (i === 1) {
-      ctx.fillStyle = 'rgba(2, 14, 134, 1)';
+    if (names[i] === 'Вы') {
+      ctx.fillStyle = 'rgba(255, 0, 0, 1)';
     }
-    if (i === 2) {
-      ctx.fillStyle = 'rgba(2, 14, 134, 0.3)';
-    }
-    if (i === 3) {
-      ctx.fillStyle = 'rgba(2, 14, 134, 0.6)';
+    else {
+      ctx.fillStyle = 'rgba(2, 14, 134, '+ Math.random() +')';
     }
     ctx.fillRect(CLOUD_X + GAP_X + BAR_WIDTH*i + GAP_X*i, CLOUD_Y*23, BAR_WIDTH, -(barHeight*times[i]) / maxTime);
   }
-  //
-  // ctx.fillStyle = '#000';
-  // ctx.fillText(playerName, CLOUD_X + GAP_X, CLOUD_HEIGHT - GAP);
-  // ctx.fillStyle = 'rgba(255, 0, 0, 1)';
-  // ctx.fillRect(CLOUD_X + GAP_X + BAR_WIDTH*playerIndex + GAP_X*playerIndex, CLOUD_Y*23, BAR_WIDTH, -barHeight);
-  //
-  // ctx.fillStyle = '#000';
-  // ctx.fillText('Кекс', CLOUD_X + GAP_X + BAR_WIDTH + GAP_X, CLOUD_HEIGHT - GAP);
-  // ctx.fillStyle = 'rgba(2, 14, 134, 1)';
-  // ctx.fillRect(CLOUD_X + GAP_X + BAR_WIDTH*playerIndex + GAP_X*playerIndex, CLOUD_Y*23, BAR_WIDTH, -barHeight);
-  //
-  // ctx.fillStyle = '#000';
-  // ctx.fillText('Катя', 320, 250);
-  // ctx.fillStyle = 'rgba(2, 14, 134, 0.3)';
-  // ctx.fillRect(CLOUD_X + GAP_X + BAR_WIDTH*playerIndex + GAP_X*playerIndex, CLOUD_Y*23, BAR_WIDTH, -barHeight);
-  //
-  // ctx.fillStyle = '#000';
-  // ctx.fillText('Игорь', 410, 250);
-  // ctx.fillStyle = 'rgba(2, 14, 134, 0.6)';
-  // ctx.fillRect(CLOUD_X + GAP_X + BAR_WIDTH*playerIndex + GAP_X*playerIndex, CLOUD_Y*23, BAR_WIDTH, -barHeight);
 };
