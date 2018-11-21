@@ -47,7 +47,7 @@ window.renderStatistics = function (ctx, names, times) {
       ctx.fillStyle = 'rgba(255, 0, 0, 1)';
     }
     else {
-      ctx.fillStyle = 'rgba(2, 14, 134, ' + Math.random() + ' )';
+      ctx.fillStyle = 'rgba(2, 14, 134, ' + Math.random() + ')';
     }
     ctx.fillRect(CLOUD_X + GAP_X + BAR_WIDTH * i + GAP_X * i, CLOUD_Y * 23, BAR_WIDTH, -(barHeight * times[i]) / maxTime);
   }
