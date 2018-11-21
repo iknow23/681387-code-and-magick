@@ -59,7 +59,7 @@ for (var i = 0; i < players.length; i++) {
 similarListElement.appendChild(fragment);
 
 //  показываю окно настроек игрока
-// var setupModal = document.querySelector('.setup');
-// setupModal.classList.remove('hidden');
+var setupModal = document.querySelector('.setup');
+setupModal.classList.remove('hidden');
 
 document.querySelector('.setup-similar').classList.remove('hidden');
