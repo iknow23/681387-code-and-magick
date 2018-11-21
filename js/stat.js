@@ -1,4 +1,4 @@
-'use strict'
+'use strict';
 
 var CLOUD_WIDTH = 420;
 var CLOUD_HEIGHT = 270;
@@ -7,7 +7,6 @@ var CLOUD_Y = 10;
 var GAP = 10;
 var GAP_X = 40;
 var GAP_Y = 40;
-var FONT_GAP = 15;
 var BAR_WIDTH = 40;
 var barHeight = CLOUD_HEIGHT / 2 - 5;
 
@@ -48,7 +47,7 @@ window.renderStatistics = function (ctx, names, times) {
       ctx.fillStyle = 'rgba(255, 0, 0, 1)';
     }
     else {
-      ctx.fillStyle = 'rgba(2, 14, 134, ' + Math.random() + ')';
+      ctx.fillStyle = 'rgba(2, 14, 134, ' + Math.random() + ' )';
     }
     ctx.fillRect(CLOUD_X + GAP_X + BAR_WIDTH * i + GAP_X * i, CLOUD_Y * 23, BAR_WIDTH, -(barHeight * times[i]) / maxTime);
   }
