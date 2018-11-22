@@ -11,28 +11,45 @@ function getRandomInteger(min, max) {
   return rand;
 }
 
-//начальный (пустой) массив игроков
+// //создаю нулевой массив игроков
+// var players = [];
+//
+// //функция для создания 1 игрока
+// //цикл --внутри--> функция создающая одного игрока + добавление в массив
+// var createPlayer = function () {
+//   //создаю 1 объект
+//   var player = {
+//     name: PLAYER_NAMES[getRandomInteger(0, 7)] + PLAYER_LAST_NAMES[getRandomInteger(0, 7)],
+//     coatColor: PLAYER_COAT_COLORS[getRandomInteger(0, 5)],
+//     eyesColor: PLAYER_EYES_COLORS[getRandomInteger(0, 4)]
+//   };
+//   return player;
+//   //пушаю 1 объект в массив
+//   players.push("player");
+// }
+//
+// console.log(createPlayer());
+//
+// //функция для создания 4 игроков
+// var createPlayers = function (playersQuantity) {
+//   for (var i = 1; i <= playersQuantity; i++) {
+//     createPlayer();
+//   }
+// };
+//
+// //создаю массив объектов с игроками
+// players = [createPlayers(4)];
+
 var players = [];
 
-//создаю игроков
-//цикл --внутри--> функция создающая одного игрока + добавление в массив
-var createPlayers = function (playersQuantity) {
-  for (var i = 1; i <= playersQuantity; i++) {
-    //создаю 1 объект
-    var player_i = {
-      name: PLAYER_NAMES[getRandomInteger(0, 7)] + PLAYER_LAST_NAMES[getRandomInteger(0, 7)],
-      coatColor: PLAYER_COAT_COLORS[getRandomInteger(0, 5)],
-      eyesColor: PLAYER_EYES_COLORS[getRandomInteger(0, 4)]
-    }
-    return player_i;
-    //пушаю 1 объект в массив
-    players.push("player_i");
-    return players;
+for (var i = 0; i < 4; i++) {
+  var player = {
+    name: PLAYER_NAMES[getRandomInteger(0, 7)] + PLAYER_LAST_NAMES[getRandomInteger(0, 7)],
+    coatColor: PLAYER_COAT_COLORS[getRandomInteger(0, 5)],
+    eyesColor: PLAYER_EYES_COLORS[getRandomInteger(0, 4)]
   };
-};
-
-//создаю массив объектов с игроками
-players = [createPlayers(4)];
+  players.push(player);
+}
 
 var similarListElement = document.querySelector('.setup-similar-list');
 var similarWizardTemplate = document.querySelector('#similar-wizard-template').content.querySelector('.setup-similar-item');
