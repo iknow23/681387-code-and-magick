@@ -102,7 +102,7 @@ var wizardCoatInput = document.querySelector('.setup-wizard-form').querySelector
 
 wizardCoat.addEventListener('click', function () {
   wizardCoat.style.fill = PLAYER_COAT_COLORS[getRandomInteger(0, 5)];
-  wizardCoatInput.setAttribute('name', 'wizardCoat.style.fill');
+  wizardCoatInput.setAttribute('value', wizardCoat.style.fill);
 });
 
 //  пишу код изменения цвета глаз игрока по нажатии на них
@@ -111,7 +111,7 @@ var wizardEyesInput = document.querySelector('.setup-wizard-form').querySelector
 
 wizardEyes.addEventListener('click', function () {
   wizardEyes.style.fill = PLAYER_EYES_COLORS[getRandomInteger(0, 4)];
-  wizardEyesInput.setAttribute('name', 'wizardEyes.style.fill');
+  wizardEyesInput.setAttribute('value', wizardEyes.style.fill);
 });
 
 //  пишу код изменения цвета файербола игрока по нажатии на него
@@ -120,5 +120,10 @@ var wizardFireballWrapInput = wizardFireballWrap.querySelector('input');
 
 wizardFireballWrap.addEventListener('click', function () {
   wizardFireballWrap.style.background = PLAYER_FIREBALL_COLORS[getRandomInteger(0, 4)];
-  wizardFireballWrapInput.setAttribute('name', 'wizardFireballWrap.style.background');
+  wizardFireballWrapInput.setAttribute('value', PLAYER_FIREBALL_COLORS[getRandomInteger(0, 4)]);
 });
+
+//wizardFireballWrap.addEventListener('click', function () {
+//  wizardFireballWrap.style.background = PLAYER_FIREBALL_COLORS[getRandomInteger(0, 4)];
+//  wizardFireballWrapInput.setAttribute('value', wizardFireballWrap.style.background);
+//});
