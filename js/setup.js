@@ -51,8 +51,49 @@ for (var i = 0; i < players.length; i++) {
 }
 similarListElement.appendChild(fragment);
 
-//  показываю окно настроек игрока
-var setupModal = document.querySelector('.setup');
-setupModal.classList.remove('hidden');
-
 document.querySelector('.setup-similar').classList.remove('hidden');
+
+//  пишу код открытия модального окна настроек игрока
+//  прописываю переменные
+var setup = document.querySelector('.setup');
+var setupOpen = document.querySelector('.setup-open');
+var setupClose = setup.querySelector('.setup-close');
+
+//  пишу функции открытия/закрытия модального окна настроек игрока
+var popupOpen = function () {
+  setup.classList.remove('hidden');
+
+  document.addEventListener('keydown', function(evt) {
+    if (evt.keyCode === 27) {
+      popupClose();
+    }
+  });
+};
+
+var popupClose = function () {
+  setup.classList.add('hidden');
+};
+
+//  применяю функции к обработчикам событий
+setupOpen.addEventListener('click', function () {
+  popupOpen();
+});
+
+setupOpen.addEventListener('keydown', function (evt) {
+  if (evt.keyCode === 13) {
+    popupOpen();
+  }
+});
+
+setupClose.addEventListener('click', function () {
+  popupClose();
+});
+
+setupClose.addEventListener('keydown', function (evt) {
+  if (evt.keyCode === 13) {
+    popupClose();
+  }
+});
+
+//  валиадция формы
+var input = document.setup.querySelector('.setup-user-name');
