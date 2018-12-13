@@ -1,7 +1,7 @@
 (function () {
   'use strict';
 
-  var setupDialogElement = document.querySelector('.setup');
+  var setupDialogElement = window.setup;
   var dialogHandler = setupDialogElement.querySelector('.upload');
 
   dialogHandler.addEventListener('mousedown', function (evt) {
@@ -49,6 +49,25 @@
 
     document.addEventListener('mousemove', onMouseMove);
     document.addEventListener('mouseup', onMouseUp);
+  });
+
+
+
+  var form = setupDialogElement.querySelector('.setup-wizard-form');
+  form.addEventListener('submit', function (evt) {
+    var data = new FormData(form);
+
+    var successHandler = function (response) {
+      setupDialogElement.classList.add('hidden');
+    };
+
+    // var errorHandler = function (errorMessage) {
+    //   alert('Ошибка');
+    // };
+
+    window.backend.upload(data, successHandler, window.utils.errorHandler);
+
+    evt.preventDefault();
   });
 
 })();

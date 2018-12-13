@@ -96,4 +96,6 @@
   //  wizardFireballWrapInput.setAttribute('value', wizardFireballWrap.style.background);
   //});
 
+  window.setup = setup;
+
 })();
